@@ -1,4 +1,4 @@
-# Hifz AI
+#sidimadtv-quran-memorizationlive
 
 A Quran memorization and recitation-practice web app. Pick any surah, listen to a prominent reciter with live word-level highlighting as they recite, then recite into your mic to get word-level accuracy feedback.
 
