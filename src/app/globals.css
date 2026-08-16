@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-quran: var(--font-quran);
+}
+
+.arabic {
+  font-family: var(--font-quran), "Amiri Quran", "Scheherazade New", serif;
+  font-size: 2rem;
+  line-height: 2.75;
+  direction: rtl;
+  text-align: right;
+}
+
+.arabic-word {
+  display: inline-block;
+  padding: 0 0.15rem;
+  border-radius: 0.25rem;
+}
+
+@keyframes bump {
+  0% { transform: scale(0.92); opacity: 0.6; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* React controls opacity for reveal/hide — the CSS animation only
+   handles transform (the flag sway). */
+
+/* Flag sway — tighter perspective + larger amplitudes so the motion
+   is clearly visible at the bismillah font size. The whole phrase
+   tilts as one fabric panel with translateY adding depth-bob. */
+@keyframes flagMajesticSway {
+  0%, 100% {
+    transform:
+      perspective(900px)
+      rotateY(0deg)
+      skewX(0deg)
+      translateX(0)
+      translateY(0);
+  }
+  25% {
+    transform:
+      perspective(900px)
+      rotateY(14deg)
+      skewX(-3deg)
+      translateX(22px)
+      translateY(-6px);
+  }
+  50% {
+    transform:
+      perspective(900px)
+      rotateY(0deg)
+      skewX(0deg)
+      translateX(0)
+      translateY(0);
+  }
+  75% {
+    transform:
+      perspective(900px)
+      rotateY(-14deg)
+      skewX(3deg)
+      translateX(-22px)
+      translateY(6px);
+  }
+}
+
+.intro-bismillah {
+  font-family: var(--font-quran), "Amiri Quran", "Scheherazade New", serif;
+  direction: rtl;
+  text-align: center;
+  line-height: 1.4;
+  color: #fafaf9;
+  font-size: clamp(2.4rem, 10vw, 7rem);
+  max-width: 92vw;
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 0 50px rgba(255, 255, 255, 0.35),
+    0 0 110px rgba(255, 255, 255, 0.15);
+
+  animation: flagMajesticSway 11000ms ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-bismillah { animation: none; }
+}
