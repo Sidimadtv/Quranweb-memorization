@@ -2,7 +2,7 @@
 
 A Quran memorization and recitation-practice web app. Pick any surah, listen to a prominent reciter with live word-level highlighting as they recite, then recite into your mic to get word-level accuracy feedback.
 
-🌐 **Live:** <https://hifz-ai-beta.vercel.app/>
+🌐 **Live:** <https://sidimadtv-quran-memorizationlive.vercel.app/>
 
 > **Not a replacement for a qualified teacher.** Speech recognition can't judge tajweed at phoneme level. Use this to drill word accuracy and as a recitation companion alongside a real `mu'allim`.
 
